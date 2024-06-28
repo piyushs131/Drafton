@@ -1,0 +1,17 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("mongodb+srv://krishnavaibhav1331:loldontexist@cluster0.ndbandf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Company {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  logoUrl      String
+  teamDetails  String
+  testimonials String
+  projects     String
+}
